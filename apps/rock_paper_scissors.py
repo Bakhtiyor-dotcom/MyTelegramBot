@@ -1,4 +1,4 @@
-iimport random
+import random
 
 print("Привет! Давай сыграем в камень-ножницы-бумага.")
 
