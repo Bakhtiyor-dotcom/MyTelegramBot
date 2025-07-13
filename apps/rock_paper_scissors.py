@@ -1,4 +1,4 @@
-import random
+iimport random
 
 print("Привет! Давай сыграем в камень-ножницы-бумага.")
 
@@ -13,7 +13,6 @@ while True:
         continue
 
     computer_choice = random.choice(["камень", "ножницы", "бумага"])
-    print("Компьютер выбрал:", computer_choice)
 
     if user_choice == computer_choice:
         print("Ничья!")
