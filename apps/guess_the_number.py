@@ -1,16 +1,8 @@
 import random
 
-print("Я загадал число от 0 до 100. Попробуй угадать!")
-
-secret = random.randint(0, 100)
-
-guess = input("Введи число: ")
-
-if guess.isdigit():
-    guess = int(guess)
-    if guess == secret:
-        print("Ура! Ты угадал!")
+def play_guess_game(user_number):
+    hidden = random.randint(1, 100)
+    if user_number == hidden:
+        return f"Ты угадал! 🎉 Я тоже загадал {hidden}"
     else:
-        print("Не угадал. Было загадано:", secret)
-else:
-    print("Это не число :(")
+        return f"Не угадал! Я загадал {hidden}"

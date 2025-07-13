@@ -1,26 +1,14 @@
 import random
 
-print("Привет! Давай сыграем в камень-ножницы-бумага.")
-
-while True:
-    user_choice = input("Твой выбор (камень/ножницы/бумага или выход): ").lower()
-    if user_choice == "выход":
-        print("Пока!")
-        break
-
-    if user_choice != "камень" and user_choice != "ножницы" and user_choice != "бумага":
-        print("Неверный ввод, попробуй ещё раз.")
-        continue
-
-    computer_choice = random.choice(["камень", "ножницы", "бумага"])
-
-    if user_choice == computer_choice:
-        print("Ничья!")
-    elif user_choice == "камень" and computer_choice == "ножницы":
-        print("Ты выиграл!")
-    elif user_choice == "ножницы" and computer_choice == "бумага":
-        print("Ты выиграл!")
-    elif user_choice == "бумага" and computer_choice == "камень":
-        print("Ты выиграл!")
+def play_rps(user_choice):
+    options = ["камень", "ножницы", "бумага"]
+    bot_choice = random.choice(options)
+    if user_choice == bot_choice:
+        return f"Я тоже выбрал {bot_choice}. Ничья!"
+    elif (user_choice == "камень" and bot_choice == "ножницы") or \
+         (user_choice == "ножницы" and bot_choice == "бумага") or \
+         (user_choice == "бумага" and bot_choice == "камень"):
+        return f"Я выбрал {bot_choice}. Ты победил!"
     else:
-        print("Ты проиграл!")
+        return f"Я выбрал {bot_choice}. Я победил!"
+
