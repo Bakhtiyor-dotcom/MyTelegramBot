@@ -1,22 +1,16 @@
 import random
 
-class GuessTheNumberGame:
-    def __init__(self):
-        self.secret = None
-        self.is_active = False
+print("Я загадал число от 0 до 100. Попробуй угадать!")
 
-    def start_game(self):
-        self.secret = random.randint(0, 100)
-        self.is_active = True
+secret = random.randint(0, 100)
 
-    def check_guess(self, guess):
-        if not guess.isdigit():
-            return "Введите число!"
-        guess = int(guess)
-        if guess == self.secret:
-            self.is_active = False
-            return "🎉 Поздравляем! Вы угадали!"
-        elif guess < self.secret:
-            return "🔼 Больше!"
-        else:
-            return "🔽 Меньше!"
+guess = input("Введи число: ")
+
+if guess.isdigit():
+    guess = int(guess)
+    if guess == secret:
+        print("Ура! Ты угадал!")
+    else:
+        print("Не угадал. Было загадано:", secret)
+else:
+    print("Это не число :(")
